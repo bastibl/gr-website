@@ -1,3 +1,14 @@
+author: Andrej Rode
+date: '2018-05-09'
+description: 'With great help from Nate Temple the GNU Radio website content is migrated to a static format.'
+full_title: website-update
+parent_folder: 2018-05-09-website-update
+thumbnail: 'https://www.gnuradio.org/assets/imgs/gr_web.svg'
+title: "Website Update: Goodbye Wordpress!"
+type: internal
+
+--
+
 # Website Update: Goodbye Wordpress!
 
 Today we switched over from a static dump of our old Wordpress instance to a new website based on markdown files and rendered by a custom flask application.
