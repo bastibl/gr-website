@@ -67,7 +67,7 @@ var manageEnvironment = function(environment) {
 }
 
 gulp.task('pages', function() {
-    return gulp.src(['content/**/*.j2', '!content/_*/**/*', '!content/index.j2'])
+    return gulp.src(['content/**/*.j2', '!content/_*/**/*'])
         .pipe(debug({minimal: true}))
         .pipe(nunjucksRender({
             path: template_path,
