@@ -197,7 +197,8 @@ gulp.task('news:index', function() {
             },
             manageEnv: manageEnvironment
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('news', ['news:pages', 'news:assets', 'news:index']);
@@ -235,6 +236,8 @@ gulp.task('clean', function() {
 gulp.task('serve', ['default'], function() {
 
     gulp.watch(['content/[^_]*/*.j2', 'content/*.j2'], ['pages']);
+    gulp.watch(['design/css/style.scss'], ['css']);
+    gulp.watch(['content/_news/**/*'], ['news']);
 
     browserSync({
         server: './dist',
