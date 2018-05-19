@@ -1,0 +1,22 @@
+{
+  "name": "gr-website",
+  "version": "1.0.0",
+  "description": "GNU Radio Website (www.gnuradio.org)",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnuradio/gr-website.git"
+  },
+  "author": "GNU Radio Project",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/gnuradio/gr-website/issues"
+  },
+  "homepage": "https://github.com/gnuradio/gr-website#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
