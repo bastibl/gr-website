@@ -1,0 +1,33 @@
+<div class="container-fluid marketing latest_news">
+  <div class="container marketing latest_news">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="text-center gr_heading"><strong>Latest News</strong></h2>
+      </div>
+    </div>
+
+    <div class="row">
+
+      {% for row in data.news|sort(attribute='item.date')|reverse %}
+      {% if loop.index < 4 %}
+
+      <div class="col-lg-4 news_tile">
+        <div class="news_image">
+          <a href="{{ url_for('get_new', newstitle=row['item'].full_title) }}">
+            <img src="{{ row['item'].thumbnail }}" alt="{{ row['item'].title }}" width="220">
+          </a>
+        </div>
+        <div class="news_title">
+          <h3>{{ row['item'].title }}</h3>
+        </div>
+        <div class="news_body">
+          <p>{{ row['item'].date }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,64 @@
+{% include 'header.html' %}
+
+<div class="container-fluid bbheader">
+  <div class="events_img">
+    <div class="container">
+      <span class="bbtitle">Events</span>
+    </div>
+
+  </div>
+</div>
+<main role="main">
+
+ <div class="container-fluid marketing bg_gray">
+  <div class="container marketing bg_gray learn_more_padding">
+    <div class="row ">
+      <div class="offset-lg-1 col-lg-9">
+
+        {% for row in data.events|sort(attribute='item.date')|reverse %}
+
+        {% if loop.index is divisibleby(2)  %}
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <a href={{ row.item.full_title }} class="blog_link"><h5 class="featurette-heading">{{ row.item.title }} </h5></a>
+
+            <p class="lead">{{ row.item.description }}</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <div class="vc_container">
+              <a href={{ url_for('get_event', eventtitle=row.item.full_title ) }}><img class="featurette-image img-fluid mx-auto vc_image" src={{ row.item.thumbnail }} alt="{{ row.item.title }}"></a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        {% else %}
+
+        <div class="row featurette">
+          <div class="col-md-7">
+           <a href={{ row.item.full_title }} class="blog_link"><h5 class="featurette-heading">{{ row.item.title }} </h5></a>
+           <p class="lead">{{ row.item.description }}</p>
+         </div>
+         <div class="col-md-5">
+          <div class="vc_container">
+            <a href={{ url_for('get_event', eventtitle=row.item.full_title ) }}><img class="featurette-image img-fluid mx-auto vc_image" src={{ row.item.thumbnail }} alt="{{ row.item.title }}"></a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      {% endif %}
+
+      {% endfor %}
+    </div>
+    <div class="col-lg-2">
+    </div>
+  </div>
+</div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

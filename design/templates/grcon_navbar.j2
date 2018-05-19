@@ -1,0 +1,51 @@
+<!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container">
+
+        <a class="navbar-brand" href={{ url_for('main') }}>
+          <img class="logo" src="https://www.gnuradio.org/assets/imgs/gnuradio_logo_glyphs_as_paths.svg" alt="GNU Radio" width="" height="">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gr-navbar" aria-controls="gr-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="gr-navbar">
+          <ul class="navbar-nav mr-auto">
+
+
+           <li class="nav-item">
+              <a class="nav-link" href={{ url_for('grcon_view') }}>GRCon2018</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dd_events" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+              <div class="dropdown-menu" aria-labelledby="dd_events">
+                <a class="dropdown-item" href={{ url_for('grcon_about_view') }}>The Conference</a>
+                <a class="dropdown-item" href={{ url_for('grcon_coc_view') }}>Code of Conduct</a>
+                <a class="dropdown-item" href={{ url_for('grcon_previous_years_view') }}>Previous Years</a>
+              </div>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href={{ url_for('grcon_submit_view') }}>Submit</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href={{ url_for('grcon_students_view') }}>Students</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href={{ url_for('grcon_sponsors_view') }}>Sponsors</a>
+            </li>
+
+
+
+          </ul>
+
+
+        </div>
+
+  </div>
+      </nav>

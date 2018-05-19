@@ -1,0 +1,103 @@
+{% include 'header.html' %}
+
+<div class="container-fluid bbheader">
+  <div class="bbimg">
+    <div class="container">
+      <span class="bbtitle">Blog</span>
+    </div>
+
+  </div>
+</div>
+<main role="main">
+
+ <div class="container-fluid marketing bg_gray">
+  <div class="container marketing bg_gray learn_more_padding">
+
+    <div class="row ">
+      <div class="offset-lg-1 col-lg-9">
+
+        {% for row in data.blogs|sort(attribute='item.date')|reverse %}
+
+        {% if loop.index is divisibleby(2)  %}
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+           {% if 'external' in row.item.type %}
+                  <a href="{{row.item.url}}" class="blog_link" target="_blank"><h4 class="featurette-heading">{{ row.item.title }} </h4></a>
+              {% else %}
+              <a href={{ row.item.full_title }} class="blog_link"><h4 class="featurette-heading">{{ row.item.title }} </h4></a>
+
+              {% endif %}
+              <h5>by {{ row.item.author }}</h5>
+            <p class="lead">{{ row.item.description }}</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <div class="vc_container">
+              <div class="img_container">
+              {% if 'external' in row.item.type %}
+                <a href="{{row.item.url}}" target="_blank"><img class="featurette-image img-fluid mx-auto vc_image" src={{ row.item.thumbnail }} alt="{{ row.item.title }}"></a>
+              {% else %}
+              <a href={{ row.item.full_title }}><img class="featurette-image img-fluid mx-auto vc_image" src={{ row.item.thumbnail }} alt="{{ row.item.title }}"></a>
+
+              {% endif %}
+
+              <div class="badges-container">
+              {% if 'external' in row.item.type %}<span class="badge badge-primary">external</span>{% endif %}
+              {% if row.item.sponsored  %}<span class="badge badge-success">sponsored</span>{% endif %}
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        {% else %}
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            {% if 'external' in row.item.type %}
+                  <a href="{{row.item.url}}" class="blog_link" target="_blank"><h4 class="featurette-heading">{{ row.item.title }} </h4></a>
+              {% else %}
+              <a href={{ row.item.full_title }} class="blog_link"><h4 class="featurette-heading">{{ row.item.title }} </h4></a>
+
+              {% endif %}
+
+
+
+           <h5>by {{ row.item.author }}</h5>
+
+           <p class="lead">{{ row.item.description }}</p>
+         </div>
+         <div class="col-md-5">
+          <div class="vc_container">
+              <div class="img_container">
+            {% if 'external' in row.item.type %}
+                  <a href="{{row.item.url}}" target="_blank"><img class="featurette-image img-fluid mx-auto vc_image" src={{ row.item.thumbnail }} alt="{{ row.item.title }}" target="_blank"></a>
+              {% else %}
+                  <a href={{ row.item.full_title }}><img class="featurette-image img-fluid mx-auto vc_image" src={{ row.item.thumbnail }} alt="{{ row.item.title }}"></a>
+
+              {% endif %}
+          <div class="badges-container">
+              {% if 'external' in row.item.type %}<span class="badge badge-primary">external</span>{% endif %}
+              {% if row.item.sponsored  %}<span class="badge badge-success">sponsored</span>{% endif %}
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      {% endif %}
+
+      {% endfor %}
+    </div>
+    <div class="col-lg-2">
+    </div>
+  </div>
+</div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>
