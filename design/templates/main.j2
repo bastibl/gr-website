@@ -9,7 +9,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Home page - GNU Radio" />
-    <meta property="og:description" content="&nbsp;" />
+    <meta property="og:description" content="GNU Radio Project" />
     <meta property="og:url" content="https://www.gnuradio.org/" />
     <meta property="og:site_name" content="GNU Radio" />
     <meta name="twitter:card" content="summary" />
@@ -19,7 +19,7 @@
 
     <link rel="icon" href="/assets/favicon.ico">
 
-    <title>{{ title }} | GNU Radio</title>
+    <title>GNU Radio</title>
 
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -34,8 +34,8 @@
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container">
 
-          <a class="navbar-brand" href={{ url_for('main') }}>
-            <img class="logo" src="https://www.gnuradio.org/assets/imgs/gnuradio_logo_glyphs_as_paths.svg" alt="GNU Radio" width="" height="">
+          <a class="navbar-brand" href="/" }}>
+            <img class="logo" src="/assets/imgs/gnuradio_logo_glyphs_as_paths.svg" alt="GNU Radio" width="" height="">
 
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gr-navbar" aria-controls="gr-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,24 +48,24 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dd_events" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                 <div class="dropdown-menu" aria-labelledby="dd_events">
-                  <a class="dropdown-item" href={{ url_for('about_view') }}>GNU Radio</a>
-                  <a class="dropdown-item" href={{ url_for('about_organization_view') }}>Leadership</a>
+                  <a class="dropdown-item" href="/about/">GNU Radio</a>
+                  <a class="dropdown-item" href="/about/organization/">Leadership</a>
                 </div>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href={{ url_for('blogview') }}>Blog</a>
+                <a class="nav-link" href="/blog/">Blog</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href={{ url_for('newsview') }}>News</a>
+                <a class="nav-link" href="/news/">News</a>
               </li>
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dd_events" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
                 <div class="dropdown-menu" aria-labelledby="dd_events">
-                  <a class="dropdown-item" href={{ url_for('grcon_view') }} target="_blank">GNU Radio Conference 2018</a>
-                  <a class="dropdown-item" href={{ url_for('eventview') }}>Other Events</a>
+                  <a class="dropdown-item" href="/grcon-2018/" target="_blank">GNU Radio Conference 2018</a>
+                  <a class="dropdown-item" href="/events/">Other Events</a>
                 </div>
               </li>
 
@@ -91,6 +91,9 @@
       </nav>
     </header>
 
+    {% block pageheader %}
+    {% endblock %}
+
     <main role="main">
       {% block content %}
       {% endblock %}
@@ -101,7 +104,7 @@
             <div class="col-lg-5">
               <div class="row">
                 <div class="col-lg-4">
-                  <img src="https://www.gnuradio.org/assets/imgs/gnufooter.svg" alt="Generic placeholder image" width="140">
+                  <img src="/assets/imgs/gnufooter.svg" alt="Generic placeholder image" width="140">
                 </div>
                 <div class="col-lg-8">
                   <h2>Contact Us</h2>

@@ -1,69 +1,72 @@
-{% include 'header.html' %}
+{% extends "main.j2" %}
 
-<div class="container-fluid bbheader">
-  <div class="about_header_img">
-    <div class="container">
-      <span class="bbtitle">About GNU Radio</span>
-    </div>
+{% block pageheader %}
 
-  </div>
-</div>
-<main role="main">
-
- <div class="container-fluid marketing bg_gray">
-  <div class="container marketing bg_gray learn_more_padding">
-
-   <div class="row">
-    <div class="col-lg-12">
-      <h2 class="text-center gr_heading learn_more about_title"><strong>What is GNU Radio?</strong></h2>
+  <div class="container-fluid bbheader">
+    <div class="about_header_img">
+      <div class="container">
+        <span class="bbtitle">About GNU Radio</span>
+      </div>
     </div>
   </div>
 
-  <div class="row ">
-
-    <div class="col-lg-12">
-
-      <p>GNU Radio is a free &amp; open-source software development toolkit that provides signal processing blocks to implement software radios. It can be used with readily-available low-cost external RF hardware to create software-defined radios, or without hardware in a simulation-like environment. It is widely used in research, industry, academia, government, and hobbyist environments to support both wireless communications research and real-world radio systems.</p>
+{% endblock %}
 
 
+{% block content %}
+
+  <div class="container-fluid marketing bg_gray">
+    <div class="container marketing bg_gray learn_more_padding">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center gr_heading learn_more about_title"><strong>What is GNU Radio?</strong></h2>
+        </div>
+      </div>
+
+      <div class="row ">
+
+        <div class="col-lg-12">
+
+          <p>GNU Radio is a free &amp; open-source software development toolkit that provides signal processing blocks to implement software radios. It can be used with readily-available low-cost external RF hardware to create software-defined radios, or without hardware in a simulation-like environment. It is widely used in research, industry, academia, government, and hobbyist environments to support both wireless communications research and real-world radio systems.</p>
+
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center gr_heading learn_more about_title"><strong>What is Software Radio?</strong></h2>
+        </div>
+      </div>
+
+      <div class="row ">
+
+        <div class="col-lg-12">
+
+          <p>The <a href="https://en.wikipedia.org/wiki/Software-defined_radio" target="_blank">Wikipedia page&nbsp;on software radio</a> provides an excellent overview. In brief, a software radio is a radio system which performs the required signal processing in software instead of using dedicated integrated circuits in hardware. The benefit is that since software can be easily replaced in the radio system, the same hardware can be used to create many kinds of radios for many different communications&nbsp;standards; thus, one software radio can be used for a variety of applications!</p>
+
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center gr_heading learn_more about_title"><strong>What Does GNU Radio Do?</strong></h2>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-lg-12">
+
+          <p>GNU Radio performs all the signal processing. You can use it to write applications to receive and transmit data with radio&nbsp;hardware, or to create entirely simulation-based applications. GNU Radio has filters, channel codes, synchronisation elements, equalizers, demodulators, vocoders, decoders, and many other types of blocks&nbsp;which are typically found in signal processing&nbsp;systems. More importantly, it includes a method of connecting these blocks and then manages how data is passed from one block to another. Extending GNU Radio is also quite easy; if you find a specific block that is missing, you can quickly create and add it.</p>
+          <p>GNU Radio applications can&nbsp;be written in either C++ or&nbsp;Python programming language, while&nbsp;the performance-critical signal processing path is implemented in C++ using processor floating-point extensions where available. This enables&nbsp;the developer to implement real-time, high-throughput radio systems in a simple-to-use, rapid-application-development environment.</p>
+
+        </div>
+      </div>
     </div>
   </div>
 
-
-  <div class="row">
-    <div class="col-lg-12">
-      <h2 class="text-center gr_heading learn_more about_title"><strong>What is Software Radio?</strong></h2>
-    </div>
-  </div>
-
-  <div class="row ">
-
-    <div class="col-lg-12">
-
-      <p>The <a href="https://en.wikipedia.org/wiki/Software-defined_radio" target="_blank">Wikipedia page&nbsp;on software radio</a> provides an excellent overview. In brief, a software radio is a radio system which performs the required signal processing in software instead of using dedicated integrated circuits in hardware. The benefit is that since software can be easily replaced in the radio system, the same hardware can be used to create many kinds of radios for many different communications&nbsp;standards; thus, one software radio can be used for a variety of applications!</p>
-
-    </div>
-  </div>
-
-
-
-  <div class="row">
-    <div class="col-lg-12">
-      <h2 class="text-center gr_heading learn_more about_title"><strong>What Does GNU Radio Do?</strong></h2>
-    </div>
-  </div>
-
-  <div class="row ">
-    <div class="col-lg-12">
-
-      <p>GNU Radio performs all the signal processing. You can use it to write applications to receive and transmit data with radio&nbsp;hardware, or to create entirely simulation-based applications. GNU Radio has filters, channel codes, synchronisation elements, equalizers, demodulators, vocoders, decoders, and many other types of blocks&nbsp;which are typically found in signal processing&nbsp;systems. More importantly, it includes a method of connecting these blocks and then manages how data is passed from one block to another. Extending GNU Radio is also quite easy; if you find a specific block that is missing, you can quickly create and add it.</p>
-      <p>GNU Radio applications can&nbsp;be written in either C++ or&nbsp;Python programming language, while&nbsp;the performance-critical signal processing path is implemented in C++ using processor floating-point extensions where available. This enables&nbsp;the developer to implement real-time, high-throughput radio systems in a simple-to-use, rapid-application-development environment.</p>
-
-    </div>
-  </div>
-</div>
-</div>
-{% include 'footer.html' %}
-</body>
-</html>
-
+{% endblock %}

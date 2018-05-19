@@ -1,68 +1,64 @@
-{% include 'header.html' %}
+{% extends "main.j2" %}
 
-<div class="container-fluid bbheader">
-  <div class="about_header_img">
-    <div class="container">
-      <span class="bbtitle">Leadership Organization</span>
-    </div>
+{% block pageheader %}
 
-  </div>
-</div>
-<main role="main">
-
-  <div class="container-fluid marketing bg_gray">
-          <div class="container marketing bg_gray learn_more_padding">
-
-          <div class="row ">
-
-            <div class="col-lg-12">
-              
-<p>The GNU Radio Project is led by the following people:</p>
-<h2>Project &amp; Foundation Officers</h2>
-<p><strong>Project Lead, Foundation President: </strong>Ben Hilburn (<a href="mailto:bhilburn@gnuradio.org" target="_blank" rel="noopener">E-Mail</a>) (<a href="https://twitter.com/bhilburn" target="_blank" rel="noopener">Twitter</a>) (<a href="http://hokietux.net/" target="_blank" rel="noopener">Website</a>)<br>
-  <strong>Community Manager, PyBOMBS Maintainer, Foundation Officer: </strong>Martin Braun (<a href="mailto:mbraun@gnuradio.org" target="_blank" rel="noopener">E-Mail</a>) (<a href="https://twitter.com/braun_noise?lang=en" target="_blank" rel="noopener">Twitter</a>)<br>
-  <strong>GNU Radio Maintainer &amp; Officer:</strong> Marcus Mueller (<a href="mailto:mmueller@gnuradio.org">E-Mail</a>)<br>
-  <strong>VOLK </strong><strong>Maintainer &amp; Officer: </strong>Nathan West<br>
-  <strong>DevOps Admin &amp; Officer</strong>: Andrej Rode<br>
-  <strong>Officer: </strong>Bastian Bloessl (<a href="https://twitter.com/bastibl">Twitter</a>) (<a href="https://www.bastibl.net/">Website</a>)<br>
-  <strong>Officer</strong><strong>:</strong> Derek Kozel (<a href="https://twitter.com/derekkozel">Twitter</a>)<br>
-  <strong>Officer:</strong> Nate Temple (<a href="https://twitter.com/devnulling">Twitter</a>)<br>
-  <strong>Officer</strong><strong>:</strong> Philip Balister</p>
-  <h2>Packaging</h2>
-  <p><strong>Debian / Ubuntu:</strong> Maitland Bottoms<br>
-    <strong>macOS:</strong> Michael Dickens<br>
-    <strong>Archlinux:</strong> Kyle Keen</p>
-    <h2>Technical Advisors</h2>
-    <p>Our technical advisors are people who have made significant contributions to the project and who continue to provide their time and resources in support of GNU Radio.</p>
-    <ul>
-      <li>Johnathan Corgan</li>
-      <li>Matt Ettus</li>
-      <li>Tim O’Shea</li>
-    </ul>
-    <h2>Unfilled</h2>
-    <p>These are roles where we are looking for additional help. If you would like to get involved in GNU Radio project leadership, please get in touch with <strong>Marcus, Martin, or Ben.</strong><strong><br>
-    </strong></p>
-    <ul>
-      <li><strong>Packaging:</strong>
-        <ul>
-          <li>Windows</li>
-        </ul>
-      </li>
-    </ul>
-
-
-            </div>
-          </div><!-- /.row -->
-        </div>
+  <div class="container-fluid bbheader">
+    <div class="about_header_img">
+      <div class="container">
+        <span class="bbtitle">Leadership Organization</span>
       </div>
 
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="container-fluid marketing bg_gray">
+    <div class="container marketing bg_gray learn_more_padding">
+
+      <div class="row ">
+
+        <div class="col-lg-12">
+          
+          <p>The GNU Radio Project is led by the following people:</p>
+          <h2>Project &amp; Foundation Officers</h2>
+          <p><strong>Project Lead, Foundation President: </strong>Ben Hilburn (<a href="mailto:bhilburn@gnuradio.org" target="_blank" rel="noopener">E-Mail</a>) (<a href="https://twitter.com/bhilburn" target="_blank" rel="noopener">Twitter</a>) (<a href="http://hokietux.net/" target="_blank" rel="noopener">Website</a>)<br>
+            <strong>Community Manager, PyBOMBS Maintainer, Foundation Officer: </strong>Martin Braun (<a href="mailto:mbraun@gnuradio.org" target="_blank" rel="noopener">E-Mail</a>) (<a href="https://twitter.com/braun_noise?lang=en" target="_blank" rel="noopener">Twitter</a>)<br>
+            <strong>GNU Radio Maintainer &amp; Officer:</strong> Marcus Mueller (<a href="mailto:mmueller@gnuradio.org">E-Mail</a>)<br>
+            <strong>VOLK </strong><strong>Maintainer &amp; Officer: </strong>Nathan West<br>
+            <strong>DevOps Admin &amp; Officer</strong>: Andrej Rode<br>
+            <strong>Officer: </strong>Bastian Bloessl (<a href="https://twitter.com/bastibl">Twitter</a>) (<a href="https://www.bastibl.net/">Website</a>)<br>
+            <strong>Officer</strong><strong>:</strong> Derek Kozel (<a href="https://twitter.com/derekkozel">Twitter</a>)<br>
+            <strong>Officer:</strong> Nate Temple (<a href="https://twitter.com/devnulling">Twitter</a>)<br>
+            <strong>Officer</strong><strong>:</strong> Philip Balister</p>
+          <h2>Packaging</h2>
+          <p><strong>Debian / Ubuntu:</strong> Maitland Bottoms<br>
+            <strong>macOS:</strong> Michael Dickens<br>
+            <strong>Archlinux:</strong> Kyle Keen</p>
+          <h2>Technical Advisors</h2>
+          <p>Our technical advisors are people who have made significant contributions to the project and who continue to provide their time and resources in support of GNU Radio.</p>
+          <ul>
+            <li>Johnathan Corgan</li>
+            <li>Matt Ettus</li>
+            <li>Tim O’Shea</li>
+          </ul>
+          <h2>Unfilled</h2>
+          <p>These are roles where we are looking for additional help. If you would like to get involved in GNU Radio project leadership, please get in touch with <strong>Marcus, Martin, or Ben.</strong><strong><br>
+          </strong></p>
+          <ul>
+            <li><strong>Packaging:</strong>
+              <ul>
+                <li>Windows</li>
+              </ul>
+            </li>
+          </ul>
 
 
+        </div>
+      </div><!-- /.row -->
+    </div>
+  </div>
 
-
-
-
-{% include 'footer.html' %}
-</body>
-</html>
-
+{% endblock %}

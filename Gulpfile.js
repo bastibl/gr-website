@@ -42,7 +42,7 @@ marked.setOptions({
 //=======================================================================
 //         NUNJUCKS
 //=======================================================================
-var template_path = ['design/layout', 'content/_posts', 'content/_notebooks', 'bib/inc'];
+var template_path = ['design/templates'];
 
 var manageEnvironment = function(environment) {
 
@@ -66,12 +66,28 @@ var manageEnvironment = function(environment) {
     environment.addFilter('date', dateFilter);
 }
 
+gulp.task('pages', function() {
+    return gulp.src(['content/**/*.j2', '!content/_*/**/*', '!content/index.j2'])
+        .pipe(debug({minimal: true}))
+        .pipe(nunjucksRender({
+            path: template_path,
+            envOptions: {
+                autoescape: false
+            },
+            manageEnv: manageEnvironment
+        }))
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
+});
+
+// static content
 gulp.task('assets', function() {
     return gulp.src(['content/**/*', '!content/**/*.j2', '!content/_*', '!content/_*/**/*'])
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 });
 
+// css
 gulp.task('css', function() {
     return gulp.src('design/css/style.scss')
         .pipe(sourcemaps.init())
@@ -87,7 +103,7 @@ gulp.task('css', function() {
 //=======================================================================
 //         BUILD / RUN
 //=======================================================================
-gulp.task('default', ['pages', 'assets']);
+gulp.task('default', ['pages', 'assets', 'css']);
 
 gulp.task('clean', function() {
     del(['dist']);
